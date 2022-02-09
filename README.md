@@ -13,3 +13,7 @@ adb shell su -c /data/local/tmp/enable_miui_adb.sh
 rm -rf enable-miui-adb/
 adb shell rm /data/local/tmp/enable_miui_adb.sh
 ```
+
+## Thanks
+
+https://www.leadroyal.cn/p/1189/
