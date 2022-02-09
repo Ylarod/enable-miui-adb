@@ -1,5 +1,8 @@
 # enable-miui-adb
+
 Enable "adb install" for miui without login and sim
+
+Requires ROOT permission
 
 ## Usage
 
