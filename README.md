@@ -7,14 +7,10 @@ Requires ROOT permission
 ## Usage
 
 ```shell
-git clone https://github.com/Ylarod/enable-miui-adb.git
-adb push enable-miui-adb/enable_miui_adb.sh /data/local/tmp
-adb shell chmod +x /data/local/tmp/enable_miui_adb.sh
-adb shell su -c /data/local/tmp/enable_miui_adb.sh
-
-# for clean
-rm -rf enable-miui-adb/
-adb shell rm /data/local/tmp/enable_miui_adb.sh
+curl https://raw.githubusercontent.com/Ylarod/enable-miui-adb/main/enable_miui_adb.sh > /data/local/tmp/enable_miui_adb.sh
+chmod +x /data/local/tmp/enable_miui_adb.sh
+su -c /data/local/tmp/enable_miui_adb.sh
+rm /data/local/tmp/enable_miui_adb.sh
 ```
 
 ## Thanks
