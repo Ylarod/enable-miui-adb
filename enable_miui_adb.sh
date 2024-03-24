@@ -1,12 +1,20 @@
 echo "------enable_miui_adb------"
 
 echo "1. Enable USB debugging (Security settings)"
-setprop persist.security.adbinput 1
-getprop persist.security.adbinput
+
+RESULT=`getprop persist.security.adbinput`
+if [[ $RESULT != "1" ]]
+then
+    setprop persist.security.adbinput 1
+fi
 
 echo "2. Enable Fastboot"
-setprop persist.fastboot.enable 1
-getprop persist.fastboot.enable
+
+RESULT=`getprop persist.fastboot.enable`
+if [[ $RESULT != "1" ]]
+then
+    setprop persist.fastboot.enable 1
+fi
 
 XML_FILE=/data/data/com.miui.securitycenter/shared_prefs/remote_provider_preferences.xml
 echo "Now modify $XML_FILE"
