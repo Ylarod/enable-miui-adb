@@ -16,7 +16,7 @@ jobs:
       # Zips ./module, prechecks it with the KernelSU Modules validator, then publishes
       # draft -> upload -> publish so the release becomes immutable as a whole.
       # Pin the action to a full commit SHA (a branch can be moved; this step runs with `contents: write`).
-      - uses: KernelSU-Modules/tools/actions/module-release@7df7369b106a7370b96933ddfad5f70b6b391fee
+      - uses: KernelSU-Modules/tools/actions/module-release@484fc581cc5d31f193914015c32a2eaf4badb8f7
         id: release
         with:
           module-dir: module

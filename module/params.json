@@ -4,11 +4,8 @@
     {
       "key": "ENABLE_FASTBOOT",
       "type": "bool",
-      "label": { "en": "Also enable fastboot", "zh-CN": "同时开启 Fastboot" },
-      "description": {
-        "en": "Sets persist.fastboot.enable=1.",
-        "zh-CN": "设置 persist.fastboot.enable=1。"
-      },
+      "label": "Also enable fastboot",
+      "description": "Sets persist.fastboot.enable=1.",
       "default": true
     }
   ]
