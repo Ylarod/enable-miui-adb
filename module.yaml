@@ -11,6 +11,7 @@ homepage: https://github.com/Ylarod/enable-miui-adb
 support: https://github.com/Ylarod/enable-miui-adb/issues
 tags: [miui, hyperos, adb, xiaomi, tools]
 icon: assets/icon.png
+kind: script
 metamodule: false
 
 authors:

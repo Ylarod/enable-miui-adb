@@ -12,4 +12,7 @@ fi
 set_perm_recursive "$MODPATH" 0 0 0755 0644
 set_perm "$MODPATH/action.sh" 0 0 0755
 
+# Newer KernelSU managers run this ZIP directly as a one-shot script and never install it;
+# getting here means an older manager or Magisk is installing it as a module.
+
 ui_print "- Installed. Tap the Action button in the manager to apply."

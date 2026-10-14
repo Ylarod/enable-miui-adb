@@ -15,17 +15,28 @@ What it does:
 
 ## Usage
 
-### KernelSU / Magisk module
+### KernelSU manager (one-shot script)
 
-1. Install the module from [KernelSU Modules](https://modules.kernelsu.org/module/enable_miui_adb)
-   or download the ZIP from [Releases](https://github.com/Ylarod/enable-miui-adb/releases).
+This is a one-shot script entry in [KernelSU Modules](https://modules.kernelsu.org/module/enable_miui_adb).
+Open it in the manager's module store and tap **Run**: the script runs once, nothing is installed and no reboot
+is needed.
+
+Options:
+
+- **Also enable fastboot** (`ENABLE_FASTBOOT`, default on): also set `persist.fastboot.enable=1`.
+
+### Older KernelSU managers / Magisk
+
+1. Install the ZIP from the module store or from [Releases](https://github.com/Ylarod/enable-miui-adb/releases).
 2. Tap the **Action** button of the module in the manager. No reboot is needed.
+   The module can be uninstalled afterwards.
 
 ### Shell
 
 ```shell
 curl https://raw.githubusercontent.com/Ylarod/enable-miui-adb/main/module/action.sh > /data/local/tmp/enable_miui_adb.sh
 su -c sh /data/local/tmp/enable_miui_adb.sh
+# Skip fastboot: su -c 'KSU_PARAM_ENABLE_FASTBOOT=false sh /data/local/tmp/enable_miui_adb.sh'
 rm /data/local/tmp/enable_miui_adb.sh
 ```
 
