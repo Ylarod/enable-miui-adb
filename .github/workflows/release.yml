@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write # create the release and upload the ZIP
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Zips ./module, prechecks it with the KernelSU Modules validator, then publishes
+      # draft -> upload -> publish so the release becomes immutable as a whole.
+      # Pin the action to a full commit SHA (a branch can be moved; this step runs with `contents: write`).
+      - uses: KernelSU-Modules/tools/actions/module-release@e0ac1a6193e698beac3c2fc47dec88d180efca8a
+        id: release
+        with:
+          module-dir: module
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          generate-release-notes: true
+
+      # Pass step outputs through env: — never interpolate ${{ }} expressions into a shell script
+      # (the asset name contains the module.prop version, i.e. author-controlled text).
+      - env:
+          ASSET_NAME: ${{ steps.release.outputs.asset-name }}
+          SHA256: ${{ steps.release.outputs.sha256 }}
+          RELEASE_URL: ${{ steps.release.outputs.release-url }}
+        run: |
+          echo "Published ${ASSET_NAME}"
+          echo "sha256 ${SHA256}"
+          echo "${RELEASE_URL}"

@@ -1,0 +1,7 @@
+id=enable_miui_adb
+name=Enable MIUI ADB
+version=v1.0.0
+versionCode=100
+author=Ylarod
+description=Enable "adb install" on MIUI / HyperOS without Xiaomi account login and SIM card. Tap the Action button to apply.
+updateJson=https://modules.kernelsu.org/api/v1/modules/enable_miui_adb/update.json

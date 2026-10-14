@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/KernelSU-Modules/tools/main/schemas/module.schema.json
+# KernelSU Modules metadata for this module. Reference: https://developers.kernelsu.org/docs/module-yaml
+# version / versionCode come from module/module.prop inside the release ZIP, not from this file.
+schemaVersion: 1
+id: enable_miui_adb
+name: Enable MIUI ADB
+summary: Enable "adb install" on MIUI / HyperOS without Xiaomi account login and SIM card
+description: README.md
+license: MIT
+homepage: https://github.com/Ylarod/enable-miui-adb
+support: https://github.com/Ylarod/enable-miui-adb/issues
+tags: [miui, hyperos, adb, xiaomi, tools]
+icon: assets/icon.png
+metamodule: false
+
+authors:
+  - name: Ylarod
+    url: https://github.com/Ylarod
+
+release:
+  assetPattern: "enable_miui_adb-*.zip"
